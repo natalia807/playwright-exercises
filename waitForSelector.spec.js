@@ -13,5 +13,6 @@ test('deve esperar o elemento carregar', async ({ page }) => {
 
   // valida se está visível
   await expect(titulo).toBeVisible();
+  
 
 });

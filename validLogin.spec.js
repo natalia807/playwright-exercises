@@ -1,8 +1,8 @@
-//Objetivo: preencher, validar preenchimento
+//Preencher usuário, preencher senha, clicar login, validar sucesso
 const { test, expect } = require('@playwright/test');
 
-test('deve preencher e validar formulário', async ({ page }) => {
-  await page.goto('https://practice.expandtesting.com/form-validation');
+test('deve preencher, fazer login e validar formulário', async ({ page }) => {
+  await page.goto('https://practice.qabrains.com/');
 
 
   await page.getByLabel('Contact name').fill('Peter');
@@ -20,6 +20,3 @@ test('deve preencher e validar formulário', async ({ page }) => {
   await expect(page.getByLabel('Contact name')).toHaveValue('Peter');
   await expect(page.getByLabel('Contact number')).toHaveValue('0123456789');
 });
-
-//getByRole: Usa funções/accessibility roles: getByRole('button')
-//getByLabel: Usa label do formulário: getByLabel('Contact name'), para inputs
